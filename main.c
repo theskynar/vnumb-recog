@@ -5,7 +5,7 @@ int isNumber(char c);
 int isAlpha(char c);
 int append(char tempS[], char variables[][100], int line);
 int clean(char *tempS, int size);
-void display(const char **variables, int line);
+void display(const char variables[][100], int line);
 int equals(char tmp[100], char line[100]);
 
 int main() {
@@ -120,12 +120,13 @@ int clean(char *tempS, int size) {
     return 0;
 }
 
-void display(const char **variables, int line) {
+void display(const char variables[][100], int line) {
+    printf("\nList of variables\n");
     for (int i = 0 ; i < line; i++) {
         for (int j =0; variables[i][j] != '\0'; j++) {
             printf("%c", variables[i][j]);
         }
-        printf(" \t");
+        printf("\n");
     }
 }
 
